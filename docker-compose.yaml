@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  directus:
+    container_name: directus_example
+    image: directus/directus:9.12.1
+    command: >
+      sh -c "npx directus bootstrap
+      && npx directus start"
+    ports:
+      - 8055:8055
+    user: node
+    volumes:
+      - ./database.sqlite:/directus/database/database.sqlite:rw
+    networks: 
+      - directus
+    environment:
+      KEY: "BVVJtaRO4ZHFqFrtP"
+      SECRET: "vzdFu&802y&r&Fx0J^VhuoTdbaeA@IoeIX^ZnsGYOAdq8o$M"
+      ADMIN_EMAIL: "admin@example.com"
+      ADMIN_PASSWORD: "d1r3ctu5"
+
+networks:
+  directus:
