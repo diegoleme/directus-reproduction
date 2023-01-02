@@ -9,9 +9,6 @@ services:
       - ./database:/directus/database
     networks:
       - directus
-    depends_on:
-      database:
-        condition: service_started
     environment:
       KEY: "BVVJtaRO4ZHFqFrtP"
       SECRET: "vzdFu&802y&r&Fx0J^VhuoTdbaeA@IoeIX^ZnsGYOAdq8o$M"
